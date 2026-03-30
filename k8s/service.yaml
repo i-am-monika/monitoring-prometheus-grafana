@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: mounika-monitored-app-service
+  namespace: default
+  labels:
+    app: mounika-monitored-app
+spec:
+  selector:
+    app: mounika-monitored-app
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 5000
+  type: NodePort
